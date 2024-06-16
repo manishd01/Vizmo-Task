@@ -1,0 +1,93 @@
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZmMGJlMjEwM2E4ZTFjNjU0ZmNiOTkiLCJpYXQiOjE3MTg1NTM2MzEsImV4cCI6MTcxODU1NDIzMX0.XN_MbF-UfnOgAJKA2c17tO9HEf5sJsa70FGooY_bWRc
+# token genrated now pass in header
+
+#### with token inserting Blogs in DB
+POST http://localhost:3000/blogs
+Content-Type: application/json
+Authorization:  Bearer {{token}}
+
+{
+    "title": "blr033333",
+    "images": "rrrrmio38931",
+    "content": "hello this is new",
+    "author":"menna01"
+    
+}
+
+#### without token inserting Blogs in DB
+POST http://localhost:3000/blogs
+Content-Type: application/json
+
+{
+    "title": "Blog18",
+    "images": "hdjskjsdjk",
+    "content": "hello this is the vlog0001",
+    "author":"kesh01"
+    
+}
+
+
+##### "author": "john bhreee"
+
+### GET request to fetch all posts
+GET http://localhost:3000/blogs
+
+
+### get one by title ---available
+GET http://localhost:3000/blogs/Blog19 
+
+### get one by title --- not available
+GET http://localhost:3000/blogs/foo23 
+
+### 
+DELETE http://localhost:3000/blogs/blr01 
+Authorization:  Bearer {{token}}
+
+###put
+PUT http://localhost:3000/blogs/catrun 
+Authorization:  Bearer {{token}}
+Content-Type: application/json
+
+{
+    "title": "tee2"
+}
+
+###patch
+
+PATCH  http://localhost:3000/blogs/catrun 
+Authorization:  Bearer {{token}}
+Content-Type: application/json
+
+{
+    "title": "titlew newn003",
+    "content": "nested content updatedd"
+}
+
+### AUTHENTICATION
+### registsering/signUP
+POST  http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "name": " anika",
+    "username": "rani01",
+    "password":"tuehE@33" 
+}
+
+##
+#  "username": "amasn23",
+#     "password":"t@#493aA" 
+####logg in:
+POST  http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "rani01",
+    "password":"tuehE@33" 
+}
+
+
+#### use loggin?
+GET   http://localhost:3000/auth/check-login
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjZlYmEwN2Q5NjVjZWFjOWQ5MWZiZjgiLCJpYXQiOjE3MTg1MzM3NzksImV4cCI6MTcxODUzNDM3OX0.wCAGMRPUCvRfSWqLygymdWJAIvzjHPsit8bCLTXrkj4
